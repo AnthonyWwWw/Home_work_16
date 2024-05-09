@@ -7,8 +7,8 @@ function Student(firstName, lastName, birthYear, evaluations) {
     this.visitingFilled = false;
 
     this.briefDescription = function(){
-        const currentYear = new Date().getFullYear();
-        alert(`Ім'я студента: ${this.firstName} \nВік: ${currentYear - this.birthYear} \nСередній бал: ${this.getAverageScore()} \nВідвідано ${this.countNumberOfClassesAttended()} занять з ${this.visiting.length}`);
+        const currentYear = this.getAge();
+        alert(`Ім'я студента: ${this.firstName} \nВік: ${currentYear} \nСередній бал: ${this.getAverageScore()} \nВідвідано ${this.countNumberOfClassesAttended()} занять з ${this.visiting.length}`);
     }
 
     this.countNumberOfClassesAttended = function(){
