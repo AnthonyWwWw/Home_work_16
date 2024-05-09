@@ -8,7 +8,12 @@ function Student(firstName, lastName, birthYear, evaluations) {
 
     this.briefDescription = function(){
         const currentYear = new Date().getFullYear();
-        alert(`${this.firstName} ${currentYear - this.birthYear}, ${this.getAverageScore()}, ${this.visiting}`);
+        alert(`Ім'я студента: ${this.firstName} \nВік: ${currentYear - this.birthYear} \nСередній бал: ${this.getAverageScore()} \nВідвідано ${this.countNumberOfClassesAttended()} занять з ${this.visiting.length}`);
+    }
+
+    this.countNumberOfClassesAttended = function(){
+        let classesAttended = isNaN(this.classesAttended) ? this.visiting.filter(item => item === true) : 0;
+        return classesAttended.length;
     }
 
     this.getAge = function() {
@@ -23,7 +28,7 @@ function Student(firstName, lastName, birthYear, evaluations) {
 
     this.present = function() {
         if (!this.visitingFilled) {
-            if (this.visiting.length <= 25) {
+            if (this.visiting.length <= 24) {
                 this.visiting.push(true);
             } else {
                 this.visitingFilled = true;
@@ -35,7 +40,7 @@ function Student(firstName, lastName, birthYear, evaluations) {
 
     this.absent = function() {
         if (!this.visitingFilled) {
-            if (this.visiting.length <= 25) {
+            if (this.visiting.length <= 24) {
                 this.visiting.push(false);
             } else {
                 this.visitingFilled = true;
