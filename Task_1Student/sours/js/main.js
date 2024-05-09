@@ -8,7 +8,7 @@ function Student(firstName, lastName, birthYear, evaluations) {
 
     this.briefDescription = function(){
         const currentYear = new Date().getFullYear();
-        alert(`${this.firstName} ${currentYear - this.birthYear}, ${this.getAverageScore()}`);
+        alert(`${this.firstName} ${currentYear - this.birthYear}, ${this.getAverageScore()}, ${this.visiting}`);
     }
 
     this.getAge = function() {
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Висновок: ${student.summary()}</p>
             </div>
             <div>
-                <button class='buttonSummary'>Summary</button>
-                <button class='buttonAbsent'>Absent</button>
-                <button class='buttonPresent'>Present</button>
+                <button class='buttonSummary'>Drief description</button>
+                <button class='buttonAbsent'>Skip class</button>
+                <button class='buttonPresent'>Attend class</button>
             </div>
         `;
 
